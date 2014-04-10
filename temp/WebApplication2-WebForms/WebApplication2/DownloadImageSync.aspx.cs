@@ -15,18 +15,14 @@ namespace WebApplication2 {
 
         public void DownloadImage(string url) {
             using (var client = new WebClient()) {
-                string imagesfolder = GetImagesFolder();
+                string imagesfolder = Server.MapPath(@"~/images/");
                 string filename = GetFileNameFor(new Uri(url));
                 client.DownloadFile(url, Path.Combine(imagesfolder, filename));
             }
         }
 
         private string GetFileNameFor(Uri uri) {
-            throw new NotImplementedException();
-        }
-
-        private string GetImagesFolder() {
-            throw new NotImplementedException();
+            return uri.Segments.Last();
         }
 
         public void DownloadImages(IEnumerable<string> urls) {
