@@ -184,6 +184,7 @@
     <Content Include="DownloadImage.aspx" />
     <Content Include="DownloadImageSync.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GetImages.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -344,6 +345,13 @@
     </Compile>
     <Compile Include="DownloadImageSync.aspx.designer.cs">
       <DependentUpon>DownloadImageSync.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetImages.aspx.cs">
+      <DependentUpon>GetImages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetImages.aspx.designer.cs">
+      <DependentUpon>GetImages.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

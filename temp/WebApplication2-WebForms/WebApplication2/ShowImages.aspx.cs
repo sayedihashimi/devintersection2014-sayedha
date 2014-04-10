@@ -15,7 +15,7 @@ namespace WebApplication2 {
 
         public IEnumerable<string> GetImageUrls() {
             string localImagesDir = Server.MapPath(@"~/images/");
-            IEnumerable<string> files = Directory.EnumerateFiles(localImagesDir, "*.jpg");
+            IEnumerable<string> files = Directory.EnumerateFiles(localImagesDir, "*.gif");
             return from f in files
                    select string.Format("http://localhost:62773/images/{0}",
                    new FileInfo(f).Name);
