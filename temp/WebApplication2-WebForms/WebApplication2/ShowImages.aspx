@@ -8,15 +8,15 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:ListView runat="server" ID="dataListViewImages"
-            ItemType="System.String"
-            SelectMethod="GetImageUrls">
-            <ItemTemplate>
-                <img src="<%# Container.DataItem as string %>" />
-            </ItemTemplate>
-        </asp:ListView>
-    </div>
+        <div>
+            <asp:ListView runat="server" ID="dataListViewImages"
+                ItemType="System.String"
+                SelectMethod="GetImageUrls">
+                <ItemTemplate>
+                    <img src="<%# Container.DataItem as string %>" />
+                </ItemTemplate>
+            </asp:ListView>
+        </div>
     </form>
 </body>
 </html>
