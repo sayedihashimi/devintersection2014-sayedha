@@ -30,21 +30,16 @@
             }
         }
 
-    using System;
-    using System.IO;
-    using System.Net.Http;
-    using System.Threading.Tasks;
-    public static class HttpContentExtensions {
-        public static async Task ReadAsFileAsync(this HttpContent content, string filename, bool overwrite) {
-            string pathname = Path.GetFullPath(filename);
-            if (!overwrite && File.Exists(filename)) {
-                throw new InvalidOperationException(string.Format("File {0} already exists.", pathname));
+    public static class ResponseExtensions
+    {
+        public static Task FlushAsync(this HttpResponse response)
+        {
+            if (response.SupportsAsyncFlush)
+            {
+                return Task.Factory.FromAsync(response.BeginFlush, response.EndFlush, null);
             }
-
-            using(var fileStream = new FileStream(pathname,FileMode.Create,FileAccess.Write,FileShare.None)){
-                    await content.CopyToAsync(fileStream);
-                    fileStream.Close();               
-            }
+            response.Flush();
+            return Task.FromResult(0);
         }
     }
 
@@ -101,3 +96,32 @@
 
             await Task.WhenAll(taskList);
         }
+
+    using System;
+    using System.IO;
+    using System.Net.Http;
+    using System.Threading.Tasks;
+    public static class HttpContentExtensions {
+        public static async Task ReadAsFileAsync(this HttpContent content, string filename, bool overwrite) {
+            string pathname = Path.GetFullPath(filename);
+            if (!overwrite && File.Exists(filename)) {
+                throw new InvalidOperationException(string.Format("File {0} already exists.", pathname));
+            }
+
+            using(var fileStream = new FileStream(pathname,FileMode.Create,FileAccess.Write,FileShare.None)){
+                    await content.CopyToAsync(fileStream);
+                    fileStream.Close();               
+            }
+        }
+    }
+
+--------- Auth: social ---------
+            app.UseMicrosoftAccountAuthentication(
+                clientId: Environment.GetEnvironmentVariable("msft-id"),
+                clientSecret: Environment.GetEnvironmentVariable("msft-secret"));
+
+            app.UseFacebookAuthentication(
+               appId: Environment.GetEnvironmentVariable("fb-id"),
+               appSecret: Environment.GetEnvironmentVariable("fb-secret"));
+
+            app.UseGoogleAuthentication();
