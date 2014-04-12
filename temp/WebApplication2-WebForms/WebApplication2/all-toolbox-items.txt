@@ -1,0 +1,103 @@
+﻿--------- ShowItems ---------
+
+            <asp:ListView runat="server" ID="dataListViewImages"
+                ItemType="System.String"
+                SelectMethod="GetImageUrls">
+                <ItemTemplate>
+                    <img src="<%# Container.DataItem as string %>" />
+                </ItemTemplate>
+            </asp:ListView>
+
+        public IEnumerable<string> GetImageUrls() {
+            string localImagesDir = Server.MapPath(@"~/images/");
+            IEnumerable<string> files = Directory.EnumerateFiles(localImagesDir, "*.gif");
+            return from f in files
+                   select string.Format("http://localhost:62773/images/{0}",
+                   new FileInfo(f).Name);
+        }
+
+--------- Downloader.ashx ---------
+
+        public override async System.Threading.Tasks.Task ProcessRequestAsync(HttpContext context) {
+            using (var client = new HttpClient()) {
+                var twitter = await client.GetStringAsync(@"http://twitter.com");                
+
+                context.Response.Write(twitter);
+
+                var bing = await client.GetStringAsync(@"http://bing.com");
+                context.Response.Write(bing);
+                context.Response.Flush();
+            }
+        }
+
+    using System;
+    using System.IO;
+    using System.Net.Http;
+    using System.Threading.Tasks;
+    public static class HttpContentExtensions {
+        public static async Task ReadAsFileAsync(this HttpContent content, string filename, bool overwrite) {
+            string pathname = Path.GetFullPath(filename);
+            if (!overwrite && File.Exists(filename)) {
+                throw new InvalidOperationException(string.Format("File {0} already exists.", pathname));
+            }
+
+            using(var fileStream = new FileStream(pathname,FileMode.Create,FileAccess.Write,FileShare.None)){
+                    await content.CopyToAsync(fileStream);
+                    fileStream.Close();               
+            }
+        }
+    }
+
+--------- GetImages.aspx ---------
+
+        <asp:TextBox runat="server" ID="textUrls" TextMode="MultiLine" Height="150" Width="1000"
+            Text="https://dl.dropboxusercontent.com/u/40134810/demoFiles/images/01.gif" />
+
+        <asp:Button runat="server" ID="btnGetImg" Text="Download" OnClick="btnGetImg_Click" />
+
+        protected void btnGetImg_Click(object sender, EventArgs e) {
+            string[] urls = textUrls.Text.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+            GetImagesSync(urls);
+        }
+
+        private void GetImagesSync(IEnumerable<string> urls) {
+            foreach (var url in urls) {
+                GetImageSync(url);
+            }
+        }
+
+        private void GetImageSync(string url) {
+            string imagesdir = Server.MapPath(@"~/images/");
+            string filename = new Uri(url).Segments.Last();
+            string localfile = Path.Combine(imagesdir, filename);
+            using (var client = new WebClient()) {
+                client.DownloadFile(url, localfile);
+            }
+        }
+
+        <asp:TextBox runat="server" ID="textUrlsAsync" TextMode="MultiLine" Height="150" Width="1000"
+            Text="https://dl.dropboxusercontent.com/u/40134810/demoFiles/images/05.gif" />
+
+        <asp:Button runat="server" ID="btnGetImgAsync" Text="Download" OnClick="btnGetImgAsync_Click"  />
+
+        private async Task GetImageAsnc(string url) {
+            string imagesdir = Server.MapPath(@"~/images/");
+            string filename = new Uri(url).Segments.Last();
+
+            using (var client = new HttpClient()) {
+                var result = await client.GetAsync(url);
+                result.EnsureSuccessStatusCode();
+                await result.Content.LoadIntoBufferAsync();
+
+                await result.Content.ReadAsFileAsync(
+                    Path.Combine(imagesdir, filename), true);
+            }
+        }
+        private async void GetImagesAsync(IEnumerable<string> urls) {
+            var taskList = new List<Task>();
+            foreach (var url in urls) {
+                taskList.Add(GetImageAsnc(url));
+            }
+
+            await Task.WhenAll(taskList);
+        }
