@@ -2,6 +2,7 @@
 <TemplateReport>
   <ItemTemplates />
   <ProjectTemplates>
+    <ProjectTemplate Path="..\MvcBasic\_Definitions\_project.vstemplate.xml" Name="MVC Basic" Description="A basic MVC template for Contoso" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="..\WebFormsBasic\_Definitions\_project.vstemplate.xml" Name="Web Forms Basic" Description="A basic Web Forms template for Contoso" ProjectType="CSharp" ProjectSubType="" />
   </ProjectTemplates>
   <Snippets />

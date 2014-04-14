@@ -91,6 +91,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <TemplateReference Include="MvcBasic.csproj">
+      <PathToProject>../MvcBasic/MvcBasic.csproj</PathToProject>
+    </TemplateReference>
     <TemplateReference Include="WebFormsBasic.csproj">
       <PathToProject>../WebFormsBasic/WebFormsBasic.csproj</PathToProject>
     </TemplateReference>
