@@ -110,7 +110,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="readme.txt" />
     <Content Include="sw-file-icon.png" />
-    <Content Include="WE-Palette.css" />
     <Content Include="_Definitions\_project.vstemplate.xml" />
     <Content Include="_preprocess.xml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
