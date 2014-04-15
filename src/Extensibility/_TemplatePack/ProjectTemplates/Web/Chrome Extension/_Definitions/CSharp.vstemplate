@@ -1,13 +1,14 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
-    <Name>Google Chrome Extension</Name>
-    <Description>A Chrome Extension</Description>
+    <Name>Contoso Google Chrome Extension</Name>
+    <Description>Contoso starter for a Google Chrome Extension</Description>
+    <DefaultName>ContosoChromeExt</DefaultName>
+    
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>
     </ProjectSubType>
     <SortOrder>1000</SortOrder>
     <CreateNewFolder>true</CreateNewFolder>
-    <DefaultName>ChromeExtensionProjectTemplate</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>

@@ -4,7 +4,7 @@
   <ProjectTemplates>
     <ProjectTemplate Path="..\MvcBasic\_Definitions\_project.vstemplate.xml" Name="Contoso Basic MVC" Description="A basic MVC template for Contoso" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="..\WebFormsBasic\_Definitions\_project.vstemplate.xml" Name="Contoso Basic Web Forms" Description="A basic Web Forms template for Contoso" ProjectType="CSharp" ProjectSubType="" />
-    <ProjectTemplate Path="ProjectTemplates\Web\Chrome Extension\_Definitions\CSharp.vstemplate" Name="Google Chrome Extension" Description="A Chrome Extension" ProjectType="CSharp" ProjectSubType="" />
+    <ProjectTemplate Path="ProjectTemplates\Web\Chrome Extension\_Definitions\CSharp.vstemplate" Name="Contoso Google Chrome Extension" Description="Contoso starter for a Google Chrome Extension" ProjectType="CSharp" ProjectSubType="" />
   </ProjectTemplates>
   <Snippets />
 </TemplateReport>
