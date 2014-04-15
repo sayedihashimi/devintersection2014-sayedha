@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AzureHelpers">
+      <HintPath>..\packages\AzureConfig.1.0.0\lib\AzureHelpers.dll</HintPath>
+    </Reference>
     <Reference Include="ContosoShared">
       <HintPath>..\packages\ContosoMvc.1.0.0\lib\ContosoShared.dll</HintPath>
     </Reference>
@@ -173,6 +176,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Azure\local.xml" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -216,6 +220,7 @@
     <Content Include="CodeTemplates\MvcView\List.cs.t4" />
     <Content Include="CodeTemplates\MvcView\ModelMetadataFunctions.cs.include.t4" />
     <Content Include="CodeTemplates\ODataControllerWithContext\Controller.cs.t4" />
+    <None Include="Properties\PublishProfiles\Contoso-Staging.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
