@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Contoson</title>
+    <title>@ViewBag.Title - Contoso</title>
 <#
     if (IsBundleConfigPresent) {
 #>
@@ -47,7 +47,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Contoson</p>
+            <p>&copy; @DateTime.Now.Year - Contoso</p>
         </footer>
     </div>
 

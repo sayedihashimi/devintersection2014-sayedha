@@ -70,7 +70,7 @@ namespace <#= Namespace #>
         bindAttribute = String.Empty;
     }
 #>
-    public class <#= ControllerName #> : Controller
+    public class <#= ControllerName #> : ContosoShared.ContosoMvcController
     {
         private <#= ContextTypeName #> db = new <#= ContextTypeName #>();
 

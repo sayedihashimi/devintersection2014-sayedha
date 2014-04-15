@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace MvcBasic.Controllers {
-    public class HomeController : Controller {
+    public class HomeController : ContosoShared.ContosoMvcController {
         public ActionResult Index() {
             return View();
         }
