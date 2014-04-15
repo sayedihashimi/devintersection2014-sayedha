@@ -10,3 +10,5 @@
  - Staging PublishProfile 
 		- \\sayedha-x2\contoso.staging\<Project-Name>\0.1.0.0
 		- Custom pre-publish setps
+
+ - EnableCdn = true for Web Forms
