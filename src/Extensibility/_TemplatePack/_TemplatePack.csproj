@@ -103,6 +103,11 @@
       <HintPath>..\packages\TemplateBuilder.1.0.3.47-beta\lib\TemplateBuilder.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ProjectTemplates\Web\Chrome Extension\_Definitions\CSharp.vstemplate" />
+    <Content Include="ProjectTemplates\Web\Chrome Extension\__TemplateIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(TemplateBuilderTargets)" Condition="Exists('$(TemplateBuilderTargets)')" Label="TemplateBuilder" />
