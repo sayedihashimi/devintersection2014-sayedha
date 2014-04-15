@@ -3,3 +3,4 @@
   - Custom appSettings in web.config
   - Custom web.config transform for appSettings
   - Custom bootstrap theme (readable from bootswatch.com)
+  - Extended build process via contoso.wpp.targets
