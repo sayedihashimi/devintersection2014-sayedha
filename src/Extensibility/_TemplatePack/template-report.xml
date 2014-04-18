@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TemplateReport>
-  <ItemTemplates />
+  <ItemTemplates>
+    <ItemTemplate Path="ItemTemplates\Contoso\contoso-web.config\_Definitions\CSharp.vstemplate" Name="Contoso web.config" Description="Contoso web.config" ProjectType="CSharp" ProjectSubType="" />
+  </ItemTemplates>
   <ProjectTemplates>
     <ProjectTemplate Path="..\MvcBasic\_Definitions\_project.vstemplate.xml" Name="Contoso Basic MVC" Description="A basic MVC template for Contoso" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="..\WebFormsBasic\_Definitions\_project.vstemplate.xml" Name="Contoso Basic Web Forms" Description="A basic Web Forms template for Contoso" ProjectType="CSharp" ProjectSubType="" />
