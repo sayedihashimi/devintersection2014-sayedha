@@ -9,5 +9,7 @@
     <ProjectTemplate Path="ProjectTemplates\Web\Chrome Extension\_Definitions\CSharp.vstemplate" Name="Contoso Google Chrome Extension" Description="Contoso starter for a Google Chrome Extension" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="..\ContosoWebFormsMvc\_Definitions\_project.vstemplate.xml" Name="Contoso MVC Web Forms" Description="Contoso starter template for MVC and Web Forms project" ProjectType="CSharp" ProjectSubType="" />
   </ProjectTemplates>
-  <Snippets />
+  <Snippets>
+    <Snippet Title="Dispose" Description="Implements the dispose pattern correctly for an object - you still need to add the IDisposable interface to the type defination." Shortcut="cdispose" Path="Snippets\CSharp\Contoso\ContosoDispose.Snippet" />
+  </Snippets>
 </TemplateReport>

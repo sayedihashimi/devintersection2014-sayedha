@@ -69,6 +69,11 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Properties\template-builder.props" />
+    <Content Include="feed.pkgdef" />
+    <Content Include="Snippets\CSharp\Contoso\cdispose.Snippet">
+      <SubType>Designer</SubType>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
