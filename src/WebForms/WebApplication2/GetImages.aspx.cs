@@ -11,10 +11,6 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication2 {
     public partial class GetImages : System.Web.UI.Page {
-        protected void Page_Load(object sender, EventArgs e) {
-
-        }
-
         protected void btnGetImg_Click(object sender, EventArgs e) {
             string[] urls = textUrls.Text.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
             GetImagesSync(urls);
@@ -35,9 +31,9 @@ namespace WebApplication2 {
             }
         }
 
-        protected void btnGetImgAsync_Click(object sender, EventArgs e) {
+        protected async void btnGetImgAsync_Click(object sender, EventArgs e) {
             IEnumerable<string> urls = textUrlsAsync.Text.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-            GetImagesAsync(urls);
+            await GetImagesAsync(urls);
         }
         private async Task GetImageAsnc(string url) {
             string imagesdir = Server.MapPath(@"~/images/");
@@ -52,7 +48,7 @@ namespace WebApplication2 {
                     Path.Combine(imagesdir, filename), true);
             }
         }
-        private async void GetImagesAsync(IEnumerable<string> urls) {
+        private async Task GetImagesAsync(IEnumerable<string> urls) {
             var taskList = new List<Task>();
             foreach (var url in urls) {
                 taskList.Add(GetImageAsnc(url));

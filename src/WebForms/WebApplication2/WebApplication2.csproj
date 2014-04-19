@@ -182,8 +182,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="DownloadImage.aspx" />
-    <Content Include="DownloadImageSync.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="GetImages.aspx" />
     <Content Include="packages.config" />
@@ -333,20 +331,6 @@
     </Compile>
     <Compile Include="Downloader.ashx.cs">
       <DependentUpon>Downloader.ashx</DependentUpon>
-    </Compile>
-    <Compile Include="DownloadImage.aspx.cs">
-      <DependentUpon>DownloadImage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DownloadImage.aspx.designer.cs">
-      <DependentUpon>DownloadImage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DownloadImageSync.aspx.cs">
-      <DependentUpon>DownloadImageSync.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DownloadImageSync.aspx.designer.cs">
-      <DependentUpon>DownloadImageSync.aspx</DependentUpon>
     </Compile>
     <Compile Include="GetImages.aspx.cs">
       <DependentUpon>GetImages.aspx</DependentUpon>
