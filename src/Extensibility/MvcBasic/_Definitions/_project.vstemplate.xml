@@ -5,7 +5,8 @@
     <DefaultName>ContosoWeb</DefaultName>
     
     <ProjectType>CSharp</ProjectType>
-    <ProjectSubType></ProjectSubType>
+    <ProjectSubType>
+    </ProjectSubType>
     <SortOrder>1000</SortOrder>
     <CreateNewFolder>true</CreateNewFolder>    
     <ProvideDefaultName>true</ProvideDefaultName>
