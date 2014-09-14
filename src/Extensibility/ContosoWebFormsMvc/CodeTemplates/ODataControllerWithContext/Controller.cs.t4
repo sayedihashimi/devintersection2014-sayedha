@@ -25,7 +25,6 @@
 var routePrefix = "odata/" + ControllerRootName;
 #>
 
-
 namespace <#= Namespace #>
 {
 	using System;

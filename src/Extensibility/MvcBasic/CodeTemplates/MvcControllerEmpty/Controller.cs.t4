@@ -4,7 +4,6 @@
 <#@ parameter type="System.String" name="ControllerRootName" #>
 <#@ parameter type="System.String" name="Namespace" #>
 <#@ parameter type="System.String" name="AreaName" #>
-
 namespace <#= Namespace #>
 {
 	using System;

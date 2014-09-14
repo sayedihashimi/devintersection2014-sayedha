@@ -7,6 +7,8 @@
   - Customized content of AssemblyInfo.cs
 		- Version defaults at 0.1.0.0 instead of 1.0.0.0
 		- Company/Copyright info
+ - Customized templates for built in scaffolders
  - Staging PublishProfile 
 		- \\sayedha-x2\contoso.staging\<Project-Name>\0.1.0.0
 		- Custom pre-publish setps
+ - Added AzureConfig NuGet package which enables custom commands in pkg mgr console

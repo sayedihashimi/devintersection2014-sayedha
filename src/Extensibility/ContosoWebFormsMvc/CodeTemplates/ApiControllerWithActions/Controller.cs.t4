@@ -6,7 +6,6 @@
 <#
 string pathFragment = ControllerRootName.ToLowerInvariant();
 #>
-
 namespace <#= Namespace #>
 {
 	using System;

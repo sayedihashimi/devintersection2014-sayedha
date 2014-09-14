@@ -30,7 +30,6 @@ routePrefix += "/" + ControllerRootName + "/";
 <#@ parameter type="System.String" name="BindAttributeIncludeText" #>
 <#@ parameter type="System.String" name ="OverpostingWarningMessage" #>
 <#@ parameter type="System.Collections.Generic.HashSet<System.String>" name="RequiredNamespaces" #>
-
 namespace <#= Namespace #>
 {
 	using System;

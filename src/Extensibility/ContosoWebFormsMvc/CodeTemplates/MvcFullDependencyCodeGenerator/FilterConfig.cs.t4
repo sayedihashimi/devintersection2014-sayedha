@@ -2,7 +2,6 @@
 <#@ output extension="cs" #>
 <#@ parameter type="System.String" name="Namespace" #>
 <#@ parameter type="System.String" name="FilterConfig" #>
-
 namespace <#= Namespace #>
 {
 	using System.Web;

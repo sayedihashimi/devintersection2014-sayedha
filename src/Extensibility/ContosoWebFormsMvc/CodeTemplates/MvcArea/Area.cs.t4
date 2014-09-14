@@ -3,7 +3,6 @@
 <#@ parameter type="System.String" name="AreaName" #>
 <#@ parameter type="System.String" name="AreaClassName" #>
 <#@ parameter type="System.String" name="Namespace" #>
-
 namespace <#= Namespace #>
 {
 	using System.Web.Mvc;

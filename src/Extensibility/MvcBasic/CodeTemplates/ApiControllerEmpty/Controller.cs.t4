@@ -3,7 +3,6 @@
 <#@ parameter type="System.String" name="ControllerName" #>
 <#@ parameter type="System.String" name="ControllerRootName" #>
 <#@ parameter type="System.String" name="Namespace" #>
-
 namespace <#= Namespace #>
 {
 	using System;

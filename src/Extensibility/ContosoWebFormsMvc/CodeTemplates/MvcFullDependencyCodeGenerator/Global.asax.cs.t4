@@ -4,7 +4,6 @@
 <#@ parameter type="System.String" name="BundleConfig" #>
 <#@ parameter type="System.String" name="FilterConfig" #>
 <#@ parameter type="System.String" name="RouteConfig" #>
-
 namespace <#= Namespace #>
 {
 	using System;

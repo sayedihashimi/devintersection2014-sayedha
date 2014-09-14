@@ -22,7 +22,6 @@
 <#
 var routePrefix = "api/" + ControllerRootName;
 #>
-
 namespace <#= Namespace #>
 {
 	using System;
